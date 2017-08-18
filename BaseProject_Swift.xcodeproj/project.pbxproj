@@ -10,6 +10,7 @@
 		5C1C4E731F46D1B600821B05 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C4E711F46D1B600821B05 /* Array+extension.swift */; };
 		5C1C4E741F46D1B600821B05 /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C4E721F46D1B600821B05 /* Dictionary+extension.swift */; };
 		5C1C4E761F46D5F000821B05 /* JSONTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C4E751F46D5F000821B05 /* JSONTools.swift */; };
+		5C1C4E781F46E41F00821B05 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C4E771F46E41F00821B05 /* BaseTableViewController.swift */; };
 		5C6EE8B81F467C0500C4CB94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6EE8B71F467C0500C4CB94 /* Assets.xcassets */; };
 		5C6EE8BB1F467C0500C4CB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6EE8B91F467C0500C4CB94 /* LaunchScreen.storyboard */; };
 		5C6EE8D11F46827800C4CB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE8C81F46827800C4CB94 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		5C1C4E711F46D1B600821B05 /* Array+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+extension.swift"; path = "../../../../../.Trash/Array+extension.swift"; sourceTree = "<group>"; };
 		5C1C4E721F46D1B600821B05 /* Dictionary+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+extension.swift"; path = "../../../../../.Trash/Dictionary+extension.swift"; sourceTree = "<group>"; };
 		5C1C4E751F46D5F000821B05 /* JSONTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTools.swift; sourceTree = "<group>"; };
+		5C1C4E771F46E41F00821B05 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		5C6EE8AD1F467C0500C4CB94 /* BaseProject_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6EE8B71F467C0500C4CB94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C6EE8BA1F467C0500C4CB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				5C6EE8D41F4683EB00C4CB94 /* BaseTabBarController.swift */,
 				5C6EE8DD1F46847E00C4CB94 /* BaseNavigationController.swift */,
 				5C6EE8DF1F46849D00C4CB94 /* BaseViewController.swift */,
+				5C1C4E771F46E41F00821B05 /* BaseTableViewController.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				5C6EE8F91F4685E800C4CB94 /* MineViewController.swift in Sources */,
 				5C1C4E741F46D1B600821B05 /* Dictionary+extension.swift in Sources */,
 				5C6EE8F71F4685DA00C4CB94 /* MenuViewController.swift in Sources */,
+				5C1C4E781F46E41F00821B05 /* BaseTableViewController.swift in Sources */,
 				5C6EE8FB1F46864F00C4CB94 /* UIColor+Extension.swift in Sources */,
 				5C6EE8E41F4684E200C4CB94 /* Bundle+extension.swift in Sources */,
 				5C6EE9031F46BF6F00C4CB94 /* UIAlertController+extension.swift in Sources */,
