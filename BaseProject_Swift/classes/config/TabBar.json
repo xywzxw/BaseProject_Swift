@@ -8,7 +8,7 @@
   "image":"tabbar_menu",
   "select_image":"tabbar_menu",
 },
- {"cls":"BaseTableViewController",
+ {"cls":"TestTableViewController",
  "title":"表格",
  "image":"tabbar_home",
  "select_image":"tabbar_home",

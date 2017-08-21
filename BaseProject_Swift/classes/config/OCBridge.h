@@ -15,6 +15,8 @@
 #import <MJRefresh/MJRefresh.h>
 #import <Reachability/Reachability.h>
 #import <YYModel/YYModel.h>
-
+#import <UMMobClick/MobClick.h>
+#import <UMSocialCore/UMSocialCore.h>
+#import "UMessage.h"
 
 #endif /* OCBridge_h */

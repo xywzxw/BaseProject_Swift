@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class BaseTabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.barTintColor = UIColor.white;
@@ -56,5 +56,5 @@ extension BaseTabBarController{
         let nav = BaseNavigationController(rootViewController:vc)
         nav.navigationBar.isTranslucent = false
         return nav
-}
+    }
 }

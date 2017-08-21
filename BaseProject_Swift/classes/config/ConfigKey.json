@@ -1,0 +1,20 @@
+{
+    "qq_app_id":"1106250615",
+    "qq_app_secret":"Wda33XDma93U2apE",
+    "qq_redirect_url":"https://m.hao123.com",
+    "wx_app_key":"wx953c27c7a15054d6",
+    "wx_app_secret":"00b9f38f650bd5e0fdd3f3f568c2bff4",
+    "wb_app_key":"3904845774",
+    "wb_app_secret":"ef4628a958a17409de7178b591e4ff8e",
+    "wb_redirect_url":"http://ldc.xywzxw.cc/redirect",
+    "um_app_key":"598195e2f29d982d88000658",
+    "um_push_secret":"gs6gheigosscek2jza7zmtmwyuwvo6h3",
+    "easemob_key":"xywzxw#xwchat",
+    "easemob_apns_name":"kaifa",
+    "bk_map_key":"Mh7XPjMnIVFuBwnuGHvEOU3haXNrt2EN",
+    "qn_scope":"xywzxw",
+    "qn_access_key":"IbwEKRcuBxYanlW2IH-rVHryspdsoBDZaevXvH5i",
+    "qn_secret_key":"2qKk5x2WV5YkDPYIyxYiIYZBUBpiw7H9D5ey2Vs3",
+    "qn_host":"http://ohurok03z.bkt.clouddn.com",
+    "cast_link_key":"b0433e07f7e4645f28038ab6e978643a"
+}
