@@ -23,4 +23,15 @@ class TestTableViewController: BaseTableViewController {
         super.loadMore()
         print("上拉加载")
     }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        let tf = UITextField.init(frame: CGRect(x: 50, y: 5, width: 200, height: 40))
+        tf.backgroundColor = UIColor.gray
+        cell.contentView.addSubview(tf)
+        return cell
+        
+        
+    }
 }
