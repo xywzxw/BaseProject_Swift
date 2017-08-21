@@ -22,13 +22,19 @@ class HomeViewController: BaseViewController {
 //            }
 //        }
         
-        let jsonStr = "[{\"name\": \"hangge\", \"age\": 100, \"phones\": [{\"name\": \"公司\",\"number\": \"123456\"}, {\"name\": \"家庭\",\"number\": \"001\"}]}, {\"name\": \"big boss\",\"age\": 1,\"phones\": [{ \"name\": \"公司\",\"number\": \"111111\"}]}]"
+//        let jsonStr = "[{\"name\": \"hangge\", \"age\": 100, \"phones\": [{\"name\": \"公司\",\"number\": \"123456\"}, {\"name\": \"家庭\",\"number\": \"001\"}]}, {\"name\": \"big boss\",\"age\": 1,\"phones\": [{ \"name\": \"公司\",\"number\": \"111111\"}]}]"
 //        guard let jsonData = jsonStr.data(using: String.Encoding.utf8, allowLossyConversion: false) else { return  }
 //        let json = JSON(data: jsonData)
 //        print(json)
 
-        guard let json = JSONTools().parse(fileName: "TabBar.json") else { return }
-        print(json)
+//        guard let json = JSONTools().parse(fileName: "TabBar.json") else { return }
+//        print(json)
 
+        
+        let alert = UIAlertController().alertShow(type: .alert,title: "title", message: "这里是提示信息",array:["aaa","cancle"]){
+            (index,msg) in
+                print("\(index)-------\(msg)")
+            }
+        self.present(alert, animated: true, completion: nil)
     }
 }

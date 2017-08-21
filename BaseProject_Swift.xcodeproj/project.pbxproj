@@ -15,6 +15,7 @@
 		5C63AD881F4A76A200BB05A6 /* APPTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63AD871F4A76A200BB05A6 /* APPTools.swift */; };
 		5C63AD8A1F4A7A0600BB05A6 /* ConfigKey.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C63AD891F4A7A0600BB05A6 /* ConfigKey.json */; };
 		5C63AD8D1F4AAE5300BB05A6 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63AD8C1F4AAE5300BB05A6 /* TestTableViewController.swift */; };
+		5C63AD8F1F4AC68E00BB05A6 /* XWAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63AD8E1F4AC68E00BB05A6 /* XWAlertView.swift */; };
 		5C6EE8B81F467C0500C4CB94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6EE8B71F467C0500C4CB94 /* Assets.xcassets */; };
 		5C6EE8BB1F467C0500C4CB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6EE8B91F467C0500C4CB94 /* LaunchScreen.storyboard */; };
 		5C6EE8D11F46827800C4CB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE8C81F46827800C4CB94 /* AppDelegate.swift */; };
@@ -30,7 +31,6 @@
 		5C6EE8FB1F46864F00C4CB94 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE8FA1F46864F00C4CB94 /* UIColor+Extension.swift */; };
 		5C6EE8FD1F4688C300C4CB94 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE8FC1F4688C300C4CB94 /* NetWorkTools.swift */; };
 		5C6EE8FF1F469B3000C4CB94 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6EE8FE1F469B3000C4CB94 /* libsqlite3.tbd */; };
-		5C6EE9011F46BC8800C4CB94 /* UIAlertView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE9001F46BC8800C4CB94 /* UIAlertView+Extension.swift */; };
 		5C6EE9031F46BF6F00C4CB94 /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE9021F46BF6F00C4CB94 /* UIAlertController+extension.swift */; };
 		996D9D6C2201B2000FAF77F4 /* Pods_BaseProject_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA60C17FC7D401ECBA0EBC1 /* Pods_BaseProject_Swift.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +47,7 @@
 		5C63AD871F4A76A200BB05A6 /* APPTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPTools.swift; sourceTree = "<group>"; };
 		5C63AD891F4A7A0600BB05A6 /* ConfigKey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConfigKey.json; sourceTree = "<group>"; };
 		5C63AD8C1F4AAE5300BB05A6 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		5C63AD8E1F4AC68E00BB05A6 /* XWAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWAlertView.swift; sourceTree = "<group>"; };
 		5C6EE8AD1F467C0500C4CB94 /* BaseProject_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6EE8B71F467C0500C4CB94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C6EE8BA1F467C0500C4CB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		5C6EE8FA1F46864F00C4CB94 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5C6EE8FC1F4688C300C4CB94 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		5C6EE8FE1F469B3000C4CB94 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		5C6EE9001F46BC8800C4CB94 /* UIAlertView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIAlertView+Extension.swift"; path = "../../../../SwiftProject/SwiftProject/classes/category/UIAlertView+Extension.swift"; sourceTree = "<group>"; };
 		5C6EE9021F46BF6F00C4CB94 /* UIAlertController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
 		6FA60C17FC7D401ECBA0EBC1 /* Pods_BaseProject_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseProject_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1D2C8EE4BA1AA1175B882E /* Pods-BaseProject_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject_Swift/Pods-BaseProject_Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +200,7 @@
 				5C6EE8FC1F4688C300C4CB94 /* NetWorkTools.swift */,
 				5C1C4E751F46D5F000821B05 /* JSONTools.swift */,
 				5C63AD871F4A76A200BB05A6 /* APPTools.swift */,
+				5C63AD8E1F4AC68E00BB05A6 /* XWAlertView.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -217,7 +218,6 @@
 		5C6EE8D61F46843500C4CB94 /* category */ = {
 			isa = PBXGroup;
 			children = (
-				5C6EE9001F46BC8800C4CB94 /* UIAlertView+Extension.swift */,
 				5C6EE8FA1F46864F00C4CB94 /* UIColor+Extension.swift */,
 				5C6EE8E31F4684E200C4CB94 /* Bundle+extension.swift */,
 				5C6EE8D71F46844400C4CB94 /* UIView+Extension.swift */,
@@ -535,8 +535,8 @@
 				5C6EE8FB1F46864F00C4CB94 /* UIColor+Extension.swift in Sources */,
 				5C6EE8E41F4684E200C4CB94 /* Bundle+extension.swift in Sources */,
 				5C6EE9031F46BF6F00C4CB94 /* UIAlertController+extension.swift in Sources */,
-				5C6EE9011F46BC8800C4CB94 /* UIAlertView+Extension.swift in Sources */,
 				5C6EE8FD1F4688C300C4CB94 /* NetWorkTools.swift in Sources */,
+				5C63AD8F1F4AC68E00BB05A6 /* XWAlertView.swift in Sources */,
 				5C6EE8DE1F46847E00C4CB94 /* BaseNavigationController.swift in Sources */,
 				5C1C4E761F46D5F000821B05 /* JSONTools.swift in Sources */,
 				5C63AD881F4A76A200BB05A6 /* APPTools.swift in Sources */,

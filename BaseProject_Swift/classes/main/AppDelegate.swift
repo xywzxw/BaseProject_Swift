@@ -63,15 +63,18 @@ extension AppDelegate {
         switch currentNetWorkStatus {
         case .NetworkStatusNone:
             tips = "" // 设置
-            let alertView = UIAlertView(title: "设置网络", message: "", cancleTitle: "好的", otherButtonTitle: ["设置"], onDismissBlock: { (index) in // app-Prefs:root=WIFI
-                guard let url = URL(string: "App-Prefs:root=com.zxw.jfxy.swift") else {
-                    return
+            
+            let alert = UIAlertController().alertShow(type: .alert, title: "设置网络", message: "", array: ["设置","返回"], callBack: { (index, msg) in
+                if index == 0{
+                    guard let url = URL(string: "App-Prefs:root=com.zxw.jfxy.swift") else {
+                        return
+                    }
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.openURL(url)
+                    }
                 }
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.openURL(url)
-                }
-            }, onCancleBlock:nil)
-            alertView.show()
+            })
+            
             break
         case .NetworkStatus2G,.NetworkStatus3G,.NetworkStatus4G:
             tips = "当前是移动网络，请注意你的流量"
@@ -84,8 +87,10 @@ extension AppDelegate {
         print(tips.lengthOfBytes(using: String.Encoding.utf16.rawValue))
         let length = tips.lengthOfBytes(using: String.Encoding.utf16.rawValue)
         if length > 0 {
-            let alertView = UIAlertView(title: "温馨提示", message: tips as String, delegate: nil, cancelButtonTitle: "好的")
-            alertView.show()
+            
+            let alert = UIAlertController().alertShow(type: .alert, title: "温馨提示", message: tips as String, array: ["返回"], callBack: { (index, msg) in
+
+            })
             
         }
     }

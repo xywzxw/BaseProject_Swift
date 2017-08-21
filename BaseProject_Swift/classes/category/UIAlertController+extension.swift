@@ -9,5 +9,15 @@
 import UIKit
 
 extension UIAlertController{
+    public func alertShow(type:UIAlertControllerStyle,title:String,message:String, array: [String], callBack:@escaping ((_ index : Int, _ title: String) -> Swift.Void))->(UIAlertController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: type)
+        for i in 0..<array.count {
+            let action = UIAlertAction(title: array[i], style: i == array.count - 1 ? .cancel:.default, handler: { (action) in
+                callBack(i,array[i])
+            })
+            alert .addAction(action)
+        }
+        return alert
+    }
 
 }
