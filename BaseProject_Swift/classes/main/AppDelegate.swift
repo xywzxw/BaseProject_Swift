@@ -58,6 +58,14 @@ extension AppDelegate {
     }
     
     @objc fileprivate func networkChange() {
+        
+        
+        let alert = UIAlertController().alertShow(type: .alert, title: "温馨提示", message: "appdelegate提示", array: ["返回"], callBack: { (index, msg) in
+            
+        })
+        viewController()?.present(alert, animated: true, completion: nil)
+
+        
         var tips: NSString = ""
         guard let currentNetWorkStatus = NetWorkTools.getNetworkStates() else { return }
         if currentNetWorkStatus == preNetWorkStatus { return }
@@ -76,6 +84,7 @@ extension AppDelegate {
                     }
                 }
             })
+            viewController()?.present(alert, animated: true, completion: nil)
             
             break
         case .NetworkStatus2G,.NetworkStatus3G,.NetworkStatus4G:
@@ -93,7 +102,7 @@ extension AppDelegate {
             let alert = UIAlertController().alertShow(type: .alert, title: "温馨提示", message: tips as String, array: ["返回"], callBack: { (index, msg) in
 
             })
-            
+            viewController()?.present(alert, animated: true, completion: nil)
         }
     }
 }

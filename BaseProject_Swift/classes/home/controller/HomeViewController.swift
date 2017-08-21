@@ -35,6 +35,6 @@ class HomeViewController: BaseViewController {
             (index,msg) in
                 print("\(index)-------\(msg)")
             }
-        self.present(alert, animated: true, completion: nil)
+        viewController()?.present(alert, animated: true, completion: nil)
     }
 }

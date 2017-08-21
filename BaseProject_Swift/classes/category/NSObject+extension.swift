@@ -8,12 +8,14 @@
 
 import Foundation
 extension NSObject{
-    func getViewController() -> UIViewController? {
+    func viewController() -> UIViewController? {
         
         var vc:UIViewController?
-        guard let wind = UIApplication.shared.keyWindow else { return nil}
+        guard let wind = UIApplication.shared.keyWindow else {
+            vc = UIViewController()
+            return vc
+        }
         var window = wind
-        
         if window.windowLevel != UIWindowLevelNormal {
             let windows = UIApplication.shared.windows
             for i in 0 ..< windows.count{
@@ -25,16 +27,18 @@ extension NSObject{
             }
         }
         var result = window.rootViewController
+
         while (result?.presentedViewController != nil) {
             result = result?.presentedViewController;
         }
-//        if ([result isKindOfClass:[UITabBarController class]]) {
-//            result = [(UITabBarController *)result selectedViewController];
-//        }
-//        if ([result isKindOfClass:[UINavigationController class]]) {
-//            result = [(UINavigationController *)result topViewController];
-//        }
-
-        return UIViewController()
+        //tabbar下主控制器
+        if (result?.isKind(of: BaseTabBarController.classForCoder()))! {
+            result = (result as?BaseTabBarController )?.selectedViewController
+        }
+        //非主控制器
+        if (result?.isKind(of: BaseNavigationController.classForCoder()))! {
+            result = (result as?BaseNavigationController )?.topViewController
+        }
+        return result
     }
 }
