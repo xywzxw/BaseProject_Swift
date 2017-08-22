@@ -59,13 +59,6 @@ extension AppDelegate {
     
     @objc fileprivate func networkChange() {
         
-        
-        let alert = UIAlertController().alertShow(type: .alert, title: "温馨提示", message: "appdelegate提示", array: ["返回"], callBack: { (index, msg) in
-            
-        })
-        viewController()?.present(alert, animated: true, completion: nil)
-
-        
         var tips: NSString = ""
         guard let currentNetWorkStatus = NetWorkTools.getNetworkStates() else { return }
         if currentNetWorkStatus == preNetWorkStatus { return }
@@ -73,8 +66,7 @@ extension AppDelegate {
         switch currentNetWorkStatus {
         case .NetworkStatusNone:
             tips = "" // 设置
-            
-            let alert = UIAlertController().alertShow(type: .alert, title: "设置网络", message: "", array: ["设置","返回"], callBack: { (index, msg) in
+            UIAlertController().alertShow(type: .alert, title: "设置网络", message: "", array: ["设置","返回"], callBack: { (index, msg) in
                 if index == 0{
                     guard let url = URL(string: "App-Prefs:root=com.zxw.jfxy.swift") else {
                         return
@@ -84,8 +76,6 @@ extension AppDelegate {
                     }
                 }
             })
-            viewController()?.present(alert, animated: true, completion: nil)
-            
             break
         case .NetworkStatus2G,.NetworkStatus3G,.NetworkStatus4G:
             tips = "当前是移动网络，请注意你的流量"
@@ -98,11 +88,9 @@ extension AppDelegate {
         print(tips.lengthOfBytes(using: String.Encoding.utf16.rawValue))
         let length = tips.lengthOfBytes(using: String.Encoding.utf16.rawValue)
         if length > 0 {
-            
-            let alert = UIAlertController().alertShow(type: .alert, title: "温馨提示", message: tips as String, array: ["返回"], callBack: { (index, msg) in
+            UIAlertController().alertShow(type: .alert, title: "温馨提示", message: tips as String, array: ["返回"], callBack: { (index, msg) in
 
             })
-            viewController()?.present(alert, animated: true, completion: nil)
         }
     }
 }
@@ -142,7 +130,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
         guard let um_app_key = dict["um_app_key"].string,
             let qq_app_key = dict["qq_app_id"].string,
             let qq_redirect_url = dict["qq_redirect_url"].string,
-            let wx_app_key = dict["wx_app_key"].string,
+            let wx_app_key
+            = dict["wx_app_key"].string,
             let wx_app_secret = dict["wx_app_secret"].string,
             let wb_app_key = dict["wb_app_key"].string,
             let wb_app_secret = dict["wb_app_secret"].string,

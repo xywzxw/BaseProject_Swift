@@ -13,11 +13,12 @@ pod 'MBProgressHUD', '~> 0.9.2'         # 蒙版提示
 pod 'FMDB','~>2.7.2'                    # 数据存储
 pod 'Reachability','~>3.2'              # 网络监测
 pod 'UMengAnalytics-NO-IDFA','~>4.2.5'  # 无IDFA版SDK
+pod 'SnapKit','~>3.2.0'                 # 自动布局
 
 #UMengUShare 6.4.5
-pod 'UMengUShare/UI'                    #友盟分享
-pod 'UMengUShare/Social/QQ'             #友盟-QQ
-pod 'UMengUShare/Social/Sina'           #友盟-新浪
-pod 'UMengUShare/Social/WeChat'         #友盟-微信
+pod 'UMengUShare/UI'                    # 友盟分享
+pod 'UMengUShare/Social/QQ'             # 友盟-QQ
+pod 'UMengUShare/Social/Sina'           # 友盟-新浪
+pod 'UMengUShare/Social/WeChat'         # 友盟-微信
 
 end
