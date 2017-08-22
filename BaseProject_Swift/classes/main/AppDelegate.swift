@@ -8,14 +8,11 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import Reachability
 import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var reacha: Reachability? // 监听网络状态
-    var preNetWorkStatus: NetworkStatuses? // 之前的网络状态
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -24,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         
         // 实时检查网络状态
-        checkNetworkStates()
+        NetWorkTools.share.checkNetworkStates()
 
         //友盟配置
         configUMeng(launchOptions: launchOptions)
@@ -47,52 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
     }
 
-}
-
-// MARK: - 网络状态检测
-extension AppDelegate {
-    fileprivate func checkNetworkStates() {
-        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.networkChange), name: NSNotification.Name.reachabilityChanged, object: nil)
-        reacha = Reachability.init(hostName: "https://www.baidu.com")
-        reacha?.startNotifier()
-    }
-    
-    @objc fileprivate func networkChange() {
-        
-        var tips: NSString = ""
-        guard let currentNetWorkStatus = NetWorkTools.getNetworkStates() else { return }
-        if currentNetWorkStatus == preNetWorkStatus { return }
-        preNetWorkStatus = currentNetWorkStatus
-        switch currentNetWorkStatus {
-        case .NetworkStatusNone:
-            tips = "" // 设置
-            UIAlertController().alertShow(type: .alert, title: "设置网络", message: "", array: ["设置","返回"], callBack: { (index, msg) in
-                if index == 0{
-                    guard let url = URL(string: "App-Prefs:root=com.zxw.jfxy.swift") else {
-                        return
-                    }
-                    if UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.openURL(url)
-                    }
-                }
-            })
-            break
-        case .NetworkStatus2G,.NetworkStatus3G,.NetworkStatus4G:
-            tips = "当前是移动网络，请注意你的流量"
-            break
-        case .NetworkStatusWIFI:
-            tips = ""
-            break
-        }
-        
-        print(tips.lengthOfBytes(using: String.Encoding.utf16.rawValue))
-        let length = tips.lengthOfBytes(using: String.Encoding.utf16.rawValue)
-        if length > 0 {
-            UIAlertController().alertShow(type: .alert, title: "温馨提示", message: tips as String, array: ["返回"], callBack: { (index, msg) in
-
-            })
-        }
-    }
 }
 
 // MARK: - 友盟配置

@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Reachability
 
 // MARK: - 请求枚举
 enum MethodType: String {
@@ -245,51 +246,34 @@ extension NetWorkTools {
     }
 }
 
-// MARK: -
-// MARK: -  判断网络类型
-//（与官方风格一致，推荐使用）
-enum NetworkStatuses {
-    case NetworkStatusNone  // 没有网络
-    case NetworkStatus2G     // 2G
-    case NetworkStatus3G     // 3G
-    case NetworkStatus4G     // 4G
-    case NetworkStatusWIFI   // WIFI
-}
 
+// MARK: -网络变化监测
+var reacha: Reachability?
 extension NetWorkTools {
+    
+    func checkNetworkStates() {
+        reacha = Reachability.forInternetConnection()
+        reacha?.reachableOnWWAN = false
+        NotificationCenter.default.addObserver(self, selector: #selector(networkChange), name: NSNotification.Name.reachabilityChanged, object: nil)
+        reacha?.startNotifier()
+    }
+    
      /// 获取网络状态
-     class func getNetworkStates() -> NetworkStatuses? {
-        guard let object1 = UIApplication.shared.value(forKey: "statusBar") as? NSObject else { return nil }
-        guard let object2 = object1.value(forKey: "foregroundView") as? UIView else { return nil }
-        let subviews = object2.subviews
-
-        var status = NetworkStatuses.NetworkStatusNone
-        
-        for child in subviews {
-            if child.isKind(of: NSClassFromString("UIStatusBarDataNetworkItemView")!) {
-                // 获取到状态栏码
-                 guard let networkType = child.value(forKey: "dataNetworkType") as? Int else { return nil }
-                switch (networkType) {
-                    case 0: // 无网模式
-                        status =  NetworkStatuses.NetworkStatusNone;
-                    case 1: // 2G模式
-                        status =  NetworkStatuses.NetworkStatus2G;
-                    case 2: // 3G模式
-                        status =  NetworkStatuses.NetworkStatus3G;
-                    case 3: // 4G模式
-                        status =  NetworkStatuses.NetworkStatus4G;
-                    case 5: // WIFI模式
-                        status =  NetworkStatuses.NetworkStatusWIFI;
-                    default:
-                        break
-                }
-            }
+    fileprivate func getNetworkStates() -> NetworkStatus {
+        var status = NetworkStatus.NotReachable
+        if reacha!.isReachableViaWiFi() {
+            status = .ReachableViaWiFi
+        }else if reacha!.isReachableViaWWAN() {
+            status = .ReachableViaWWAN
         }
-        
-        // 返回网络类型
         return status;
     }
+    @objc fileprivate func networkChange() {
+        let status = getNetworkStates()
+        print(status.rawValue)
+    }
 }
+//MARK: -二次封装的网络请求
 extension NetWorkTools{
     /// 通用请求方法
     /**
