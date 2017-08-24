@@ -31,6 +31,11 @@
 		5C6EE8FD1F4688C300C4CB94 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE8FC1F4688C300C4CB94 /* NetWorkTools.swift */; };
 		5C6EE8FF1F469B3000C4CB94 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6EE8FE1F469B3000C4CB94 /* libsqlite3.tbd */; };
 		5C6EE9031F46BF6F00C4CB94 /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE9021F46BF6F00C4CB94 /* UIAlertController+extension.swift */; };
+		5CA0DF9A1F4E66910079A547 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DF991F4E66910079A547 /* BaseWebViewController.swift */; };
+		5CA0DFA91F4E9FB50079A547 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DFA21F4E9FB50079A547 /* WRCycleCell.swift */; };
+		5CA0DFAA1F4E9FB50079A547 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DFA31F4E9FB50079A547 /* WRCycleScrollView.swift */; };
+		5CA0DFAB1F4E9FB50079A547 /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DFA41F4E9FB50079A547 /* WRProxy.swift */; };
+		5CA0DFAC1F4E9FB50079A547 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DFA51F4E9FB50079A547 /* WRNavigationBar.swift */; };
 		5CD9FF4B1F4C03D50094EC66 /* PictureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9FF4A1F4C03D50094EC66 /* PictureSliderView.swift */; };
 		5CD9FF541F4C03FF0094EC66 /* eighth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CD9FF4D1F4C03FF0094EC66 /* eighth.jpg */; };
 		5CD9FF551F4C03FF0094EC66 /* fifth.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5CD9FF4E1F4C03FF0094EC66 /* fifth.jpeg */; };
@@ -78,6 +83,11 @@
 		5C6EE8FC1F4688C300C4CB94 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		5C6EE8FE1F469B3000C4CB94 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5C6EE9021F46BF6F00C4CB94 /* UIAlertController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
+		5CA0DF991F4E66910079A547 /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
+		5CA0DFA21F4E9FB50079A547 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
+		5CA0DFA31F4E9FB50079A547 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
+		5CA0DFA41F4E9FB50079A547 /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
+		5CA0DFA51F4E9FB50079A547 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
 		5CD9FF4A1F4C03D50094EC66 /* PictureSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureSliderView.swift; path = "../../../../../../Downloads/swiftCode-master/CKCScrollView/CKCScrollView/PictureSliderView.swift"; sourceTree = "<group>"; };
 		5CD9FF4D1F4C03FF0094EC66 /* eighth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eighth.jpg; sourceTree = "<group>"; };
 		5CD9FF4E1F4C03FF0094EC66 /* fifth.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fifth.jpeg; sourceTree = "<group>"; };
@@ -184,6 +194,7 @@
 				5C6EE8DD1F46847E00C4CB94 /* BaseNavigationController.swift */,
 				5C6EE8DF1F46849D00C4CB94 /* BaseViewController.swift */,
 				5C1C4E771F46E41F00821B05 /* BaseTableViewController.swift */,
+				5CA0DF991F4E66910079A547 /* BaseWebViewController.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 		5C6EE8CB1F46827800C4CB94 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				5CA0DF9B1F4E9FAD0079A547 /* transnavigationbar */,
 				5CD9FF661F4C0F2E0094EC66 /* pagerview */,
 				5CD9FF491F4C03CF0094EC66 /* pictureslider */,
 			);
@@ -366,6 +378,33 @@
 			path = viewmodel;
 			sourceTree = "<group>";
 		};
+		5CA0DF9B1F4E9FAD0079A547 /* transnavigationbar */ = {
+			isa = PBXGroup;
+			children = (
+				5CA0DFA01F4E9FB50079A547 /* WRNavigationBar */,
+			);
+			path = transnavigationbar;
+			sourceTree = "<group>";
+		};
+		5CA0DFA01F4E9FB50079A547 /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				5CA0DFA11F4E9FB50079A547 /* WRCycleScrollView */,
+				5CA0DFA51F4E9FB50079A547 /* WRNavigationBar.swift */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		5CA0DFA11F4E9FB50079A547 /* WRCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				5CA0DFA21F4E9FB50079A547 /* WRCycleCell.swift */,
+				5CA0DFA31F4E9FB50079A547 /* WRCycleScrollView.swift */,
+				5CA0DFA41F4E9FB50079A547 /* WRProxy.swift */,
+			);
+			path = WRCycleScrollView;
+			sourceTree = "<group>";
+		};
 		5CD9FF491F4C03CF0094EC66 /* pictureslider */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +563,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/NinaPagerView/NinaPagerView.framework",
@@ -537,6 +577,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NinaPagerView.framework",
@@ -596,13 +637,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CA0DFAC1F4E9FB50079A547 /* WRNavigationBar.swift in Sources */,
 				5CD9FF4B1F4C03D50094EC66 /* PictureSliderView.swift in Sources */,
 				5CD9FF6B1F4C0F2E0094EC66 /* PagerViewController.swift in Sources */,
 				5C6EE8D11F46827800C4CB94 /* AppDelegate.swift in Sources */,
 				5C6EE8F91F4685E800C4CB94 /* MineViewController.swift in Sources */,
+				5CA0DFA91F4E9FB50079A547 /* WRCycleCell.swift in Sources */,
 				5C6EE8F71F4685DA00C4CB94 /* MenuViewController.swift in Sources */,
 				5CD9FF6C1F4C0F2E0094EC66 /* PageManagerVC.swift in Sources */,
 				EB9261DA1F4AF16D00D78DEA /* UIView+extension.swift in Sources */,
+				5CA0DFAB1F4E9FB50079A547 /* WRProxy.swift in Sources */,
 				5CD9FF6D1F4C0F2E0094EC66 /* PagerTitleView.swift in Sources */,
 				5C1C4E781F46E41F00821B05 /* BaseTableViewController.swift in Sources */,
 				5C63AD8D1F4AAE5300BB05A6 /* TestTableViewController.swift in Sources */,
@@ -610,8 +654,10 @@
 				5C6EE8E41F4684E200C4CB94 /* Bundle+extension.swift in Sources */,
 				5C63AD911F4AD98A00BB05A6 /* NSObject+extension.swift in Sources */,
 				5C6EE9031F46BF6F00C4CB94 /* UIAlertController+extension.swift in Sources */,
+				5CA0DF9A1F4E66910079A547 /* BaseWebViewController.swift in Sources */,
 				5C6EE8FD1F4688C300C4CB94 /* NetWorkTools.swift in Sources */,
 				5C6EE8DE1F46847E00C4CB94 /* BaseNavigationController.swift in Sources */,
+				5CA0DFAA1F4E9FB50079A547 /* WRCycleScrollView.swift in Sources */,
 				5C1C4E761F46D5F000821B05 /* JSONTools.swift in Sources */,
 				5C63AD881F4A76A200BB05A6 /* APPTools.swift in Sources */,
 				5C6EE8F51F4685C600C4CB94 /* HomeViewController.swift in Sources */,

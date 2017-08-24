@@ -14,4 +14,11 @@ class MenuViewController: BaseViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.randomColor()
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let web = BaseWebViewController()
+        web.urlStr = "http://m.hao123.com"
+        web.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(web, animated: true)
+        
+    }
 }

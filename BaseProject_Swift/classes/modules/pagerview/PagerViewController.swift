@@ -22,8 +22,8 @@ class PagerViewController: BaseViewController {
         return manager
     }()
     lazy var pageMagager:PageManagerVC = {
-        let vc1 = UIViewController()
-        vc1.view.backgroundColor = UIColor.randomColor()
+        let vc1 = BaseWebViewController()
+        vc1.urlStr = "http://m.selanwang.com"
         let vc2 = UIViewController()
         vc2.view.backgroundColor = UIColor.randomColor()
         let vc3 = UIViewController()
