@@ -15,7 +15,7 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
 
     var canBack = false
     
-    
+    /// webView
     final lazy var webView:WKWebView = {
         let config = WKWebViewConfiguration()
         config.userContentController = WKUserContentController()
@@ -38,6 +38,8 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
         
         return webview
     }()
+    
+    /// 进度条
     final lazy var progressView:UIProgressView = {
         let pv = UIProgressView(frame: CGRect.zero)
         pv.progressTintColor = UIColor.red //进度颜色
@@ -45,6 +47,7 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
         return pv
     }()
     
+    /// 远程URL字符串
     var urlStr : String?{
         didSet{
             guard let str = urlStr,
@@ -53,6 +56,21 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
             self.webView.load(request)
         }
     }
+    
+    /// 本地html文件名称
+    var htmlName:String?{
+        didSet{
+            guard let path = Bundle.main.path(forResource: htmlName, ofType: nil) else{
+                print("\(String(describing: htmlName))文件不存在")
+                return
+            }
+            let url = URL.init(fileURLWithPath: path)
+            let request = URLRequest(url: url)
+            self.webView.load(request)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(self.webView)
@@ -75,7 +93,43 @@ extension BaseWebViewController:WKScriptMessageHandler{
 }
 // MARK: -WKUIDelegate
 extension BaseWebViewController:WKUIDelegate{
-    
+    func webViewDidClose(_ webView: WKWebView) {
+        print("webViewDidClose")
+    }
+    // 在JS端调用alert函数时，会触发此代理方法。
+    // JS端调用alert时所传的数据可以通过message拿到
+    // 在原生得到结果后，需要回调JS，是通过completionHandler回调
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        UIAlertController().alertShow(type: .alert, title: "alert", message: message, array: ["确定"]) { (index, msg) in
+            completionHandler();
+        }
+    }
+    // JS端调用confirm函数时，会触发此方法
+    // 通过message可以拿到JS端所传的数据
+    // 在iOS端显示原生alert得到YES/NO后
+    // 通过completionHandler回调给JS端
+    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+        UIAlertController().alertShow(type: .alert, title: "alert", message: "JS调用confirm", array: ["确定","取消"]) { (index, msg) in
+            completionHandler(index == 0 ? true : false);
+            return
+        }
+    }
+    // JS端调用prompt函数时，会触发此方法
+    // 要求输入一段文本
+    // 在原生输入得到文本内容后，通过completionHandler回调给JS
+    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+        let alert = UIAlertController.init(title: "alert", message: "JS调用输入框", preferredStyle: .alert)
+        alert.addTextField { (textFiled) in
+            textFiled.textColor = UIColor.red
+        }
+        let action = UIAlertAction.init(title: "确定", style: .default) { (act) in
+            let msg = alert.textFields?.last?.text
+            completionHandler((msg?.lengthOfBytes(using: .utf8))! > 0 ? msg :nil)
+        }
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: -WKNavigationDelegate

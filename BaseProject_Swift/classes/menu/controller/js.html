@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>JS测试</title>
+	</head>
+	<script type="text/javascript">
+		function clear() {
+			document.getElementById('mobile').innerHTML = ''
+			document.getElementById('name').innerHTML = ''
+			document.getElementById('msg').innerHTML = ''
+		}
+
+		//OC调用JS的方法列表
+		function alertMobile() {
+			//这里已经调用过来了 但是搞不明白为什么alert方法没有响应
+			//			alert('我是上面的小黄 手机号是:13300001111')
+			document.getElementById('mobile').innerHTML = '我是上面的小黄 手机号是:13300001111'
+		}
+
+		function alertName(msg) {
+			//alert('你好 ' + msg + ', 我也很高兴见到你')
+			document.getElementById('name').innerHTML = '你好 ' + msg + ', 我也很高兴见到你'
+		}
+
+		function alertSendMsg(num, msg) {
+			//window.alert('这是我的手机号:' + num + ',' + msg + '!!')
+			document.getElementById('msg').innerHTML = '这是我的手机号:' + num + ',' + msg + '!!'
+		}
+
+		//JS响应方法列表
+		function btnClick1() {
+			window.webkit.messageHandlers.showMobile.postMessage(null)
+		}
+
+		function btnClick2() {
+			window.webkit.messageHandlers.showName.postMessage('xiao黄')
+		}
+
+		function btnClick3() {
+			window.webkit.messageHandlers.showSendMsg.postMessage(['13300001111', 'Go Climbing This Weekend !!!'])
+		}
+		function callOC(){
+			alert("aaaaaa")
+		}
+		function back(){
+			window.webkit.messageHandlers.back.postMessage(null)
+		}
+		function alertMsg(msg){
+			alert(msg + 123)
+		}
+		function alertInput(){
+			age = prompt("请输入你的年龄:","20");
+			if (age != null){
+				alert("你今年" + age +"岁了!");
+			}else{
+				alert("你按了[取消]按钮");
+			}
+		}
+	</script>
+
+	<body>
+		<button onclick="btnClick1()"> 按钮1 </button><br/>
+		<button onclick="btnClick2()"> 按钮2 </button><br/>
+		<button onclick="btnClick3()"> 按钮3 </button><br/>
+		<button onclick="callOC()">JS调用OC</button><br/>
+		<button onclick="back()">返回上一级</button><br/>
+		<button onclick="alertMsg('JS中的alert')">调用JS</button><br/>
+		<button onclick="alertInput()">JS输入框</button><br/>
+
+	</body>
+
+</html>

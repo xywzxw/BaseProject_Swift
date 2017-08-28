@@ -31,6 +31,8 @@
 		5C6EE8FD1F4688C300C4CB94 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE8FC1F4688C300C4CB94 /* NetWorkTools.swift */; };
 		5C6EE8FF1F469B3000C4CB94 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6EE8FE1F469B3000C4CB94 /* libsqlite3.tbd */; };
 		5C6EE9031F46BF6F00C4CB94 /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EE9021F46BF6F00C4CB94 /* UIAlertController+extension.swift */; };
+		5CA092181F53C2D40081DC59 /* TestWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA092171F53C2D40081DC59 /* TestWebViewController.swift */; };
+		5CA0921A1F53E6520081DC59 /* js.html in Resources */ = {isa = PBXBuildFile; fileRef = 5CA092191F53E6520081DC59 /* js.html */; };
 		5CA0DF9A1F4E66910079A547 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DF991F4E66910079A547 /* BaseWebViewController.swift */; };
 		5CA0DFA91F4E9FB50079A547 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DFA21F4E9FB50079A547 /* WRCycleCell.swift */; };
 		5CA0DFAA1F4E9FB50079A547 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0DFA31F4E9FB50079A547 /* WRCycleScrollView.swift */; };
@@ -83,6 +85,8 @@
 		5C6EE8FC1F4688C300C4CB94 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		5C6EE8FE1F469B3000C4CB94 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5C6EE9021F46BF6F00C4CB94 /* UIAlertController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
+		5CA092171F53C2D40081DC59 /* TestWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWebViewController.swift; sourceTree = "<group>"; };
+		5CA092191F53E6520081DC59 /* js.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = js.html; sourceTree = "<group>"; };
 		5CA0DF991F4E66910079A547 /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
 		5CA0DFA21F4E9FB50079A547 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
 		5CA0DFA31F4E9FB50079A547 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
@@ -312,7 +316,9 @@
 		5C6EE8EB1F4685AD00C4CB94 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				5CA092191F53E6520081DC59 /* js.html */,
 				5C6EE8F61F4685DA00C4CB94 /* MenuViewController.swift */,
+				5CA092171F53C2D40081DC59 /* TestWebViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				5CD9FF561F4C03FF0094EC66 /* fourth.jpeg in Resources */,
 				5C6EE8BB1F467C0500C4CB94 /* LaunchScreen.storyboard in Resources */,
 				5C63AD8A1F4A7A0600BB05A6 /* ConfigKey.json in Resources */,
+				5CA0921A1F53E6520081DC59 /* js.html in Resources */,
 				5CD9FF571F4C03FF0094EC66 /* second.jpeg in Resources */,
 				5CD9FF541F4C03FF0094EC66 /* eighth.jpg in Resources */,
 				5CD9FF551F4C03FF0094EC66 /* fifth.jpeg in Resources */,
@@ -644,6 +651,7 @@
 				5C6EE8F91F4685E800C4CB94 /* MineViewController.swift in Sources */,
 				5CA0DFA91F4E9FB50079A547 /* WRCycleCell.swift in Sources */,
 				5C6EE8F71F4685DA00C4CB94 /* MenuViewController.swift in Sources */,
+				5CA092181F53C2D40081DC59 /* TestWebViewController.swift in Sources */,
 				5CD9FF6C1F4C0F2E0094EC66 /* PageManagerVC.swift in Sources */,
 				EB9261DA1F4AF16D00D78DEA /* UIView+extension.swift in Sources */,
 				5CA0DFAB1F4E9FB50079A547 /* WRProxy.swift in Sources */,
