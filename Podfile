@@ -15,7 +15,7 @@ pod 'Reachability','~>3.2'              # 网络监测
 pod 'UMengAnalytics-NO-IDFA','~>4.2.5'  # 无IDFA版SDK
 pod 'SnapKit','~>3.2.0'                 # 自动布局
 pod 'Kingfisher','~>3.10.4'             # NavigateBar效果
-
+#pod 'LYPlayer', '~> 0.1'                # 视频播放
 
 #UMengUShare 6.4.5
 pod 'UMengUShare/UI'                    # 友盟分享

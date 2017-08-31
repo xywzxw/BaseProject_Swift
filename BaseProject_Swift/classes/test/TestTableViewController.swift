@@ -11,8 +11,8 @@ import UIKit
 class TestTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.removedRefreshing = true
-        dataSource = [["111","222","333"],["aaa","bbb","ccc"],["dddddd","2222","23"],["111","222","333"],["aaa","bbb","ccc"],["dddddd","2222","23"],["111","222","333"],["aaa","bbb","ccc"],["dddddd","2222","23"],["111","222","333"],["aaa","bbb","ccc"],["dddddd","2222","23"]]
+        self.removedRefreshing = true
+        dataSource = [["webView"],["瀑布流"],["视频"]]
         self.showBackToTopBtn = true
     }
     override func refresh() {
@@ -27,11 +27,29 @@ class TestTableViewController: BaseTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        let tf = UITextField.init(frame: CGRect(x: 50, y: 5, width: 200, height: 40))
-        tf.backgroundColor = UIColor.gray
-        cell.contentView.addSubview(tf)
+        let sec = dataSource?[indexPath.section] as? [String]
+        cell.textLabel?.text = sec?[indexPath.row]
         return cell
-        
-        
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
+        switch indexPath.section {
+        case 0:
+            let web = TestWebViewController()
+            web.htmlName = "js.html"
+            navigationController?.pushViewController(web, animated: true)
+        case 1:
+            print("瀑布流")
+        case 2:
+            let video = VideoViewController()
+            navigationController?.pushViewController(video, animated: true)
+        default:
+            print("其他")
+        }
+        
+        
+        print(indexPath)
+    }
+    
 }

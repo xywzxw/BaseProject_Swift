@@ -11,11 +11,22 @@ import WebKit
 
 class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
 
-    let jsFunctionArray = ["showSendMsg","showMobile","showName","back","alert"]
-
+    
+    /// 监听JS的方法名数组
+    var jsFunctionArray:[String]?{
+        didSet{
+            guard let array = jsFunctionArray else { return }
+            let config = self.webView.configuration
+            for obj in array{
+                config.userContentController.add(self, name: obj)
+            }
+        }
+    }
+    
+    /// 页面是否可以返回上一层
     var canBack = false
     
-    /// webView
+    /// webView视图
     final lazy var webView:WKWebView = {
         let config = WKWebViewConfiguration()
         config.userContentController = WKUserContentController()
@@ -23,10 +34,6 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
         config.preferences.minimumFontSize = 10
         config.preferences.javaScriptEnabled = true
         config.preferences.javaScriptCanOpenWindowsAutomatically = false
-        
-        for obj in self.jsFunctionArray{
-            config.userContentController.add(self, name: obj)
-        }
         
         let webview = WKWebView.init(frame: CGRect.zero, configuration: config)
         webview.uiDelegate = self
@@ -61,7 +68,7 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
     var htmlName:String?{
         didSet{
             guard let path = Bundle.main.path(forResource: htmlName, ofType: nil) else{
-                print("\(String(describing: htmlName))文件不存在")
+                print("\(htmlName ?? "")文件不存在")
                 return
             }
             let url = URL.init(fileURLWithPath: path)
@@ -69,7 +76,6 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
             self.webView.load(request)
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +85,6 @@ class BaseWebViewController: BaseViewController,UIGestureRecognizerDelegate {
         progressView.frame = CGRect(x: 0, y: 0, width: view.width, height: 2)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "back_icon"), style: .plain, target: self, action: #selector(back))
-        
     }
 }
 
@@ -170,6 +175,7 @@ extension BaseWebViewController{
         }
     }
 }
+// MARK: -监听按钮事件
 extension BaseWebViewController{
     @objc fileprivate func back(){
         if canBack {
